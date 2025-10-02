@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flippo</title>
     <style>
-        body {
+          body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: moccasin;
+            padding-top: 50px; /* Menü yüksekliği kadar üst boşluk */
         }
         .menu {
             background: #222;
@@ -16,6 +18,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1000; /* Menü üstte kalsın */
+        }
+        .menu nav {
+          padding-right: 100px;
         }
         .menu .logo {
             font-weight: bold;
@@ -26,38 +36,81 @@
             text-decoration: none;
             margin-left: 24px;
             font-size: 1em;
+            
         }
         .hero {
             background: #f5f5f5;
-            padding: 48px 0;
             text-align: center;
+            width: 100%;
+            padding: 0px;
+            
+            
         }
         .hero h1 {
             margin: 0 0 16px 0;
             font-size: 2.5em;
         }
-        .hero p {
-            font-size: 1.2em;
-            color: #555;
-        }
-        .boxes {
+.box {
+    background: #f7f7fa; /* Açık gri arka plan */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 200px;
+    max-width: 450; /* Kutunun dışarı taşmasını engelle */
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    position: relative;
+    padding: 24px 16px 24px 16px;
+    overflow: hidden; /* İçerik taşarsa gizle */
+}
+
+.box p {
+    position: absolute;
+    left: 16px;
+    bottom: 24px;
+    margin: 0;
+    color: #666;
+    font-size: 0.95em;
+    width: calc(100% - 32px);
+    background: floralwhite;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Uzun metinler taşmasın */
+}
+
+@media (max-width: 900px) {
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .box {
+        width: 80vw;
+        max-width: 95vw;
+        margin-bottom: 16px;
+    }
+    img{
+        width: 100%;
+    }
+}
+
+.box h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+}
+
+            .boxes {
             display: flex;
+            flex-wrap: wrap; /* kutular satır dolunca alta geçsin */
             justify-content: center;
             gap: 24px;
             margin: 40px 10px;
         }
-        .box {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            width: 25%;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+
         .box h2 {
             margin: 0 0 8px 0;
             font-size: 1.2em;
@@ -67,16 +120,7 @@
             color: #666;
             font-size: 0.95em;
         }
-        @media (max-width: 900px) {
-            .boxes {
-                flex-direction: column;
-                align-items: center;
-            }
-            .box {
-                width: 80vw;
-                margin-bottom: 16px;
-            }
-        }
+     
     </style>
 </head>
 <body>
@@ -84,14 +128,13 @@
         <div class="logo">Flippo</div>
         <nav>
             <a href="#">Ana Sayfa</a>
-            <a href="#">Hakkımızda</a>
-            <a href="#">Servisler</a>
+          <!--<a href="#">Dersler</a>
+            <a href="#">Eğitmenler</a>-->
             <a href="#">İletişim</a>
         </nav>
     </div>
     <div class="hero">
-        <h1>Hoşgeldiniz!</h1>
-        <p>Flippo Frontend ile modern web deneyimi.</p>
+        <img src="./img/hero-img.jpg" alt="Flippo Logo">
     </div>
     <div class="boxes">
         <div class="box">
@@ -110,6 +153,23 @@
             <h2>Kutu 4</h2>
             <p>İçerik açıklaması 4</p>
         </div>
+                <div class="box">
+            <h2>Kutu 1</h2>
+            <p>İçerik açıklaması 1</p>
+        </div>
+        <div class="box">
+            <h2>Kutu 2</h2>
+            <p>İçerik açıklaması 2</p>
+        </div>
+        <div class="box">
+            <h2>Kutu 3</h2>
+            <p>İçerik açıklaması 3</p>
+        </div>
+        <div class="box">
+            <h2>Kutu 4</h2>
+            <p>İçerik açıklaması 4</p>
+        </div>
+
     </div>
 </body>
 </html>

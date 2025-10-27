@@ -1,0 +1,315 @@
+<!-- HTML: Flippo schedule blocks (3 sections) -->
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Flippo - Programlar (HTML blokları)</title>
+<style>
+  :root{
+    --bg:#fff7f9;
+    --card-bg:#ffffff;
+    --accent:#ffd54f;
+    --muted:#6b6b6b;
+    --radius:14px;
+    --shadow: 0 6px 18px rgba(0,0,0,0.08);
+    --gap:18px;
+    --font-sans: "Helvetica Neue", Arial, sans-serif;
+  }
+  body{
+    font-family:var(--font-sans);
+    background: linear-gradient(180deg,#fff7fb 0%, #f5f8ff 100%);
+    color:#222;
+    padding:28px;
+  }
+
+  .section {
+    max-width:1100px;
+    margin:20px auto;
+    background:var(--card-bg);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+
+  .section .header {
+    display:flex;
+    gap:16px;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .logo-pill {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:120px;
+    height:56px;
+    background:linear-gradient(90deg,#ff7a7a,#ffd2a6);
+    border-radius:12px;
+    color:white;
+    font-weight:700;
+    font-size:26px;
+    box-shadow:0 6px 12px rgba(0,0,0,0.06);
+  }
+  .title {
+    font-size:28px;
+    font-weight:800;
+    color:#222;
+  }
+  .subtitle {
+    color:var(--muted);
+    font-weight:600;
+    margin-left:auto;
+  }
+
+  /* grid for the cards inside section */
+  .cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:var(--gap);
+    align-items:start;
+  }
+
+  .card {
+    background:linear-gradient(180deg,#ffffff,#fffdfa);
+    border-radius:var(--radius);
+    padding:14px;
+    box-shadow:0 6px 12px rgba(20,20,40,0.04);
+    border:1px solid rgba(0,0,0,0.03);
+    min-height:110px;
+  }
+
+  .card .day {
+    display:block;
+    font-weight:800;
+    font-size:18px;
+    margin-bottom:8px;
+    color:#ff6b6b;
+  }
+  .time {
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin:6px 0;
+  }
+  .time .clock {
+    width:34px;
+    height:34px;
+    border-radius:8px;
+    display:inline-grid;
+    place-items:center;
+    background:#f5f7ff;
+    font-weight:700;
+    color:#333;
+    font-size:13px;
+  }
+  .time .meta {
+    font-size:14px;
+    color:#333;
+  }
+  .note {
+    font-size:13px;
+    color:var(--muted);
+    margin-top:8px;
+  }
+
+  /* academy style */
+  .academy {
+    background: linear-gradient(180deg,#fffdf6,#fff8ff);
+  }
+  .badge {
+    display:inline-block;
+    background:#ffe082;
+    color:#3b2f2f;
+    padding:6px 10px;
+    border-radius:12px;
+    font-weight:700;
+    margin-right:8px;
+    font-size:13px;
+  }
+
+  /* responsive tweaks */
+  @media (max-width:520px){
+    .logo-pill{ width:86px; height:46px; font-size:20px;}
+    .title{font-size:20px;}
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- SECTION 1: Flippo - 24-36 / 36-48 (example) -->
+  <section class="section" aria-labelledby="flippo1">
+    <div class="header">
+      <div class="logo-pill">FLIPPO</div>
+      <h1 id="flippo1" class="title">Cimnastik Programı — 24–36 / 36–48 ay</h1>
+      <div class="subtitle">Ebeveyn katılımı (isteğe göre)</div>
+    </div>
+
+    <div class="cards" role="list">
+      <!-- Monday -->
+      <article class="card" role="listitem" aria-label="Pazartesi">
+        <div class="day">Pazartesi</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımlı (A)</div></div></div>
+        <div class="time"><span class="clock">12:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımlı (A)</div></div></div>
+      </article>
+
+      <!-- Tuesday -->
+      <article class="card" role="listitem" aria-label="Salı">
+        <div class="day">Salı</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımlı (B)</div></div></div>
+        <div class="time"><span class="clock">12:00</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımlı (B)</div></div></div>
+      </article>
+
+      <!-- Wednesday -->
+      <article class="card" role="listitem" aria-label="Çarşamba">
+        <div class="day" style="color:#b86bff">Çarşamba</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımsız (A)</div></div></div>
+        <div class="time"><span class="clock">12:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımsız (A)</div></div></div>
+        <div class="time"><span class="clock">16:30</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımlı (C)</div></div></div>
+      </article>
+
+      <!-- Thursday -->
+      <article class="card" role="listitem" aria-label="Perşembe">
+        <div class="day" style="color:#8bc34a">Perşembe</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımlı (A)</div></div></div>
+        <div class="time"><span class="clock">12:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımlı (A)</div></div></div>
+      </article>
+
+      <!-- Friday -->
+      <article class="card" role="listitem" aria-label="Cuma">
+        <div class="day" style="color:#2b8fff">Cuma</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımlı (B)</div></div></div>
+        <div class="time"><span class="clock">12:00</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımlı (B)</div></div></div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımlı (C)</div></div></div>
+      </article>
+
+      <!-- Saturday -->
+      <article class="card" role="listitem" aria-label="Cumartesi">
+        <div class="day" style="color:#ff4d4d">Cumartesi</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımsız (A)</div></div></div>
+        <div class="time"><span class="clock">12:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımsız (A)</div></div></div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımsız (B)</div></div></div>
+      </article>
+
+      <!-- Sunday -->
+      <article class="card" role="listitem" aria-label="Pazar">
+        <div class="day" style="color:#ff8a65">Pazar</div>
+        <div class="time"><span class="clock">11:00</span><div class="meta"><strong>36–48 AY</strong><div class="note">Ebeveyn Katılımlı (C)</div></div></div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>24–36 AY</strong><div class="note">Ebeveyn Katılımlı (C)</div></div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Flippo - 4-5 YAŞ (benzer blok, daha büyük yaşlar) -->
+  <section class="section" aria-labelledby="flippo2">
+    <div class="header">
+      <div class="logo-pill" style="background:linear-gradient(90deg,#87cefa,#9be7ff)">FLIPPO</div>
+      <h2 id="flippo2" class="title">Cimnastik Programı — 4–5 YAŞ</h2>
+      <div class="subtitle">5–6 yaş grupları örnek saatleri</div>
+    </div>
+
+    <div class="cards">
+      <article class="card" aria-label="Pazartesi (4-5)">
+        <div class="day">Pazartesi</div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>5–6 YAŞ (A)</strong><div class="note">13:15–14:00</div></div></div>
+        <div class="time"><span class="clock">14:15</span><div class="meta"><strong>5–6 YAŞ (B)</strong><div class="note">14:15–15:00</div></div></div>
+      </article>
+
+      <article class="card" aria-label="Salı (4-5)">
+        <div class="day" style="color:#f7c948">Salı</div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>5–6 YAŞ (C)</strong><div class="note">13:15–14:00</div></div></div>
+        <div class="time"><span class="clock">14:15</span><div class="meta"><strong>5–6 YAŞ (D)</strong><div class="note">14:15–15:00</div></div></div>
+      </article>
+
+      <article class="card" aria-label="Çarşamba (4-5)">
+        <div class="day" style="color:#e04da4">Çarşamba</div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>5–6 YAŞ (A)</strong><div class="note">13:15–14:00</div></div></div>
+        <div class="time"><span class="clock">14:15</span><div class="meta"><strong>5–6 YAŞ (B)</strong><div class="note">14:15–15:00</div></div></div>
+      </article>
+
+      <article class="card" aria-label="Perşembe (4-5)">
+        <div class="day" style="color:#9ecb3b">Perşembe</div>
+        <div class="time"><span class="clock">13:15</span><div class="meta"><strong>5–6 YAŞ (C)</strong><div class="note">13:15–14:00</div></div></div>
+        <div class="time"><span class="clock">14:15</span><div class="meta"><strong>5–6 YAŞ (D)</strong><div class="note">14:15–15:00</div></div></div>
+      </article>
+
+      <article class="card" aria-label="Cuma (4-5)">
+        <div class="day" style="color:#2b8fff">Cuma</div>
+        <div class="time"><span class="clock">15:15</span><div class="meta"><strong>5–6 YAŞ (E)</strong><div class="note">15:15–16:00</div></div></div>
+      </article>
+
+      <article class="card" aria-label="Pazar (4-5)">
+        <div class="day" style="color:#ff8a65">Pazar</div>
+        <div class="time"><span class="clock">15:15</span><div class="meta"><strong>5–6 YAŞ (E)</strong><div class="note">15:15–16:00</div></div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: Flippo Akademi (özel atölyeler, pembe tema) -->
+  <section class="section academy" aria-labelledby="academy">
+    <div class="header">
+      <div class="logo-pill" style="background:linear-gradient(90deg,#d6a6ff,#ffd0f0)">AKADEMİ</div>
+      <h2 id="academy" class="title">Flippo Akademi — Haftalık Program</h2>
+      <div class="subtitle">1.5 Saat Oyun Grubu + 30 Dakika Oyun Alanı</div>
+    </div>
+
+    <div class="cards">
+      <article class="card" aria-label="Akademi Pazartesi">
+        <div class="day">Pazartesi</div>
+        <div class="badge">10:00–12:00</div>
+        <div class="meta"><strong>24–32 Ay</strong> <div class="note">Ebeveyn katılımlı</div></div>
+
+        <hr style="margin:10px 0;border:none;border-top:1px solid rgba(0,0,0,0.04)">
+
+        <div class="time"><span class="clock">12:30</span><div class="meta"><strong>40–48 Ay</strong><div class="note">A Grubu (12:30–14:30)</div></div></div>
+        <div style="margin-top:8px;color:var(--muted)">15:00–17:00 : Drama Atölyesi</div>
+      </article>
+
+      <article class="card" aria-label="Akademi Salı">
+        <div class="day">Salı</div>
+        <div class="badge">10:00–12:00</div>
+        <div class="meta"><strong>24–32 Ay</strong><div class="note">Ebeveyn katılımlı</div></div>
+
+        <div style="margin-top:10px;color:var(--muted)">12:15–14:15 : 32–40 Ay (A GRUBU)</div>
+        <div style="margin-top:6px;color:var(--muted)">14:30–16:30 : 40–48 Ay (B GRUBU)</div>
+        <div style="margin-top:10px;color:var(--muted)">17:00–19:00 : Resim Atölyesi</div>
+      </article>
+
+      <article class="card" aria-label="Akademi Çarşamba">
+        <div class="day">Çarşamba</div>
+        <div class="badge">11:00–13:00</div>
+        <div class="meta"><strong>Satranç Atölyesi</strong><div class="note">11:00–13:00</div></div>
+
+        <div style="margin-top:10px;color:var(--muted)">13:30–15:30 : 32–40 Ay (B GRUBU)</div>
+        <div style="margin-top:6px;color:var(--muted)">15:45–17:45 : 40–48 Ay (C GRUBU)</div>
+      </article>
+
+      <article class="card" aria-label="Akademi Cuma">
+        <div class="day">Cuma</div>
+        <div class="badge">10:00–12:00</div>
+        <div class="meta"><strong>24–32 Ay</strong><div class="note">Ebeveyn katılımlı</div></div>
+        <div style="margin-top:10px;color:var(--muted)">12:30–14:30 : 40–48 Ay (A GRUBU)</div>
+        <div style="margin-top:6px;color:var(--muted)">15:00–17:00 : 32–40 Ay (A GRUBU)</div>
+      </article>
+
+      <article class="card" aria-label="Akademi Cumartesi">
+        <div class="day">Cumartesi</div>
+        <div class="badge">12:00–14:00</div>
+        <div class="meta"><strong>40–48 Ay</strong><div class="note">B GRUBU</div></div>
+
+        <div style="margin-top:10px;color:var(--muted)">14:30–16:30 : 24–32 Ay (Ebeveyn katılımlı)</div>
+      </article>
+
+      <article class="card" aria-label="Akademi Pazar">
+        <div class="day">Pazar</div>
+        <div class="badge">12:00–14:00</div>
+        <div class="meta"><strong>40–48 Ay</strong><div class="note">C GRUBU</div></div>
+        <div style="margin-top:10px;color:var(--muted)">14:30–16:30 : 32–40 Ay (B GRUBU)</div>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>

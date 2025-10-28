@@ -129,39 +129,43 @@ body{
   border-radius:6px;
 }
 
-/* HERO */
-.hero{
-  width:100%;
-  position:relative;
-  min-height:30vh; /* ekranın %30'u */
-  height:60vh;     /* sabit 30vh yüksekliği */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  background:#f5f5f5;
+.hero-content {
+    position: absolute;
+    left: 40px;                 /* sola sıfırlama */
+    bottom: 40px;
+    max-width: 720px;
+    z-index: 2;
+    color: #111;
+    background: transparent;    /* transparan arka plan */
+    padding: 22px 22px 18px 22px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;           /* taşmayı önlemek için */
 }
-.hero-img{
-  width:100%;
-  height:100%;    /* container yüksekliğini doldursun */
-  object-fit:cover;
-  display:block;
-  min-height:0;   /* önceki sabit px değerini sıfırla */
-  max-height:30vh;
+
+/* Resim ve içerik hizalaması */
+.hero {
+    width: 100%;
+    position: relative;
+    min-height: 60vh;          /* ekranın %30'u */
+    height: 60vh;              /* sabit 30vh yüksekliği */
+    display: flex;
+    align-items: flex-end;     /* içerik alt kısımda hizalanır */
+    justify-content: center;
+    overflow: hidden;
+    background: #f5f5f5;
 }
-.hero-content{
-  position:absolute;
-  left:40px;               
-  bottom:40px;
-  max-width:720px;
-  z-index:2;
-  color:#ffffff;
-  background: transparent;
-  padding:22px 22px 18px 22px;
-  border-radius:12px;
-  text-align:left;
-  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+
+.hero-img {
+    width: 100%;
+    height: 100%;              /* container yüksekliğini doldursun */
+    object-fit: cover;
+    display: block;
+    min-height: 0;             /* önceki sabit px değerini sıfırla */
+    max-height: 60vh;
 }
+
 .hero-content h1{
   margin:0 0 10px 0;
   font-size:2rem;
@@ -235,7 +239,6 @@ body{
   overflow-wrap:break-word;
 }
 
-/* Responsive grid breakpoints */
 @media (max-width:1200px){
   .box{ width:calc(50% - 24px); }
 }
@@ -243,7 +246,16 @@ body{
   .logo img{ height:40px; }
   .menu{ padding:10px 14px; }
 }
-/* Mobile: side nav, hero scaling, content inside image */
+@media (max-width: 700px) {
+    .hero {
+        min-height: 30vh;
+        height: 30vh;
+    }
+    .hero-img {
+        height: 100%;
+        max-height: 30vh;
+    }
+}
 @media (max-width:700px){
   /* side nav: hidden off-canvas */
   .menu nav{
@@ -283,7 +295,7 @@ body{
     bottom:18px;
     width:auto;
     padding:12px 14px;
-    background: rgba(255,255,255,0.88);
+    /*background: rgba(255,255,255,0.88);*/
     border-radius:8px;
   }
   .hero-content h1{ font-size:1.25rem; }
@@ -313,3 +325,56 @@ body{
   .hero-content h1{ line-height:1.12; }
 }
 /* ...existing code... */
+
+.footer {
+    background-color: #003366; /* Koyu mavi arka plan */
+    color: #ffffff;            /* Beyaz yazı rengi */
+    padding: 20px;            /* İçerik için boşluk */
+    text-align: center;       /* Ortalanmış metin */
+    display: flex;            /* Flexbox kullan */
+    align-items: center;      /* Dikey ortalama */
+    justify-content: space-between; /* Eşit aralık */
+}
+
+.footer-content {
+    display: flex;            /* Flexbox kullan */
+    align-items: center;      /* Dikey ortalama */
+    justify-content: space-between; /* Eşit aralık */
+    width: 100%;             /* Tam genişlik */
+}
+
+.footer-logo-container {
+    flex: 1;                 /* Logo alanı */
+    display: flex;           /* Flexbox kullan */
+    justify-content: flex-end; /* Solda hizala */
+    padding-right: 15px;               /* Logo ve yazı arasına boşluk */
+}
+
+.footer-text {
+    flex: 2;                 /* Yazı alanı */
+    text-align: left;        /* Solda hizala */
+}
+
+.footer-content p {
+    margin: 5px 0;           /* Paragraflar arası boşluk */
+}
+
+.footer-content a {
+    color: #ffd54f;          /* Link rengi */
+    text-decoration: none;   /* Alt çizgi yok */
+}
+
+/* Mobil uyumlu stil */
+@media (max-width: 700px) {
+    .footer {
+        padding: 15px;        /* Mobilde daha az boşluk */
+        flex-direction: column; /* Dikey hizalama */
+        text-align: center;    /* Ortalanmış metin */
+    }
+    .footer-logo {
+        max-width: 80px;      /* Mobilde daha küçük logo */
+    }
+    .footer-content p {
+        font-size: 0.9rem;    /* Mobilde yazı boyutunu küçült */
+    }
+}

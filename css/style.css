@@ -223,6 +223,40 @@ body{
   padding:22px 16px 22px 16px;
   overflow:hidden;
 }
+.box .media{
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;     /* kalan alanı kapla */
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+}
+.box .box-img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* görsel kapsayıcıyı doldurur, boyut bozulmaz */
+  vertical-align: middle;
+}
+.box .overlay-title{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  margin: 0;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  line-height: 1.1;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+.box .media{ height: 160px; }
+.box > h2 { display: none; }
 .box h2{ margin:0 0 8px 0; font-size:1.15rem; }
 .box p{
   position:absolute;
@@ -255,6 +289,13 @@ body{
         height: 100%;
         max-height: 30vh;
     }
+      .box .overlay-title{
+    font-size: 0.98rem;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 6px 8px;
+  }
 }
 @media (max-width:700px){
   /* side nav: hidden off-canvas */
@@ -327,7 +368,7 @@ body{
 /* ...existing code... */
 
 .footer {
-    background-color: #003366; /* Koyu mavi arka plan */
+    background-color: #165391; /* Koyu mavi arka plan */
     color: #ffffff;            /* Beyaz yazı rengi */
     padding: 20px;            /* İçerik için boşluk */
     text-align: center;       /* Ortalanmış metin */
@@ -363,8 +404,18 @@ body{
     color: #ffd54f;          /* Link rengi */
     text-decoration: none;   /* Alt çizgi yok */
 }
-
+.footer-logo {
+    max-width: 120px;
+    width: auto;
+    height: auto;
+    display: block;
+}
 /* Mobil uyumlu stil */
+@media (max-width: 700px) {
+    .footer-logo {
+        max-width: 60px;
+    }
+}
 @media (max-width: 700px) {
     .footer {
         padding: 15px;        /* Mobilde daha az boşluk */

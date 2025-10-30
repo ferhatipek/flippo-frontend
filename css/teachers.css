@@ -1,0 +1,96 @@
+.teachers {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 18px;
+    }
+    .teachers-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .teachers-header h1 {
+      margin:0;
+      font-size:1.6rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      overflow: hidden;
+      display:flex;
+      flex-direction:column;
+      height: 100%;
+    }
+    .card .photo {
+      width:100%;
+      height: 220px;
+      overflow:hidden;
+      background:#eee;
+    }
+    .card .photo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .card .body {
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1 1 auto;
+    }
+    .card h3 {
+      margin:0;
+      font-size:1.05rem;
+      font-weight:800;
+      color:#111;
+    }
+    .card .role {
+      margin:0;
+      color:#666;
+      font-size:0.95rem;
+    }
+    .skills {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:6px 0 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .skills li {
+      background:#f1f5f9;
+      color:#333;
+      padding:6px 8px;
+      border-radius:8px;
+      font-size:0.85rem;
+    }
+    .card .cta {
+      margin-top:auto;
+      display:flex;
+      gap:8px;
+    }
+    .card .btn {
+      background: #ffd54f;
+      color:#111;
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:700;
+      font-size:0.9rem;
+    }
+
+    @media (max-width:700px){
+      .card .photo { height:160px; }
+      .teachers { padding:12px; }
+    }

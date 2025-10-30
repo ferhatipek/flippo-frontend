@@ -368,13 +368,15 @@ body{
 /* ...existing code... */
 
 .footer {
-    background-color: #165391; /* Koyu mavi arka plan */
-    color: #ffffff;            /* Beyaz yazı rengi */
-    padding: 20px;            /* İçerik için boşluk */
-    text-align: center;       /* Ortalanmış metin */
-    display: flex;            /* Flexbox kullan */
-    align-items: center;      /* Dikey ortalama */
-    justify-content: space-between; /* Eşit aralık */
+  background-color: #165391;
+  color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ortala */
+  flex-direction: column;  /* içerikleri dikey ortala */
+  text-align: center;
 }
 
 .footer-content {
@@ -382,6 +384,8 @@ body{
     align-items: center;      /* Dikey ortalama */
     justify-content: space-between; /* Eşit aralık */
     width: 100%;             /* Tam genişlik */
+     text-align: center;   
+      align-items: center;   
 }
 
 .footer-logo-container {
@@ -415,6 +419,13 @@ body{
     .footer-logo {
         max-width: 60px;
     }
+     .map-link{
+      max-width: 50px;
+    }
+    .footer-map iframe {
+        height: 90px;        /* Mobilde daha kısa harita */
+        width: 175px;
+    }
 }
 @media (max-width: 700px) {
     .footer {
@@ -428,4 +439,5 @@ body{
     .footer-content p {
         font-size: 0.9rem;    /* Mobilde yazı boyutunu küçült */
     }
+   
 }
